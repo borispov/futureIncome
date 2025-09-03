@@ -1,0 +1,111 @@
+{
+  "ticker": "CPKF",
+  "meta": {
+    "company": "Chesapeake Financial Shares, Inc.",
+    "shortName": "Chesapeake Financial Shares, In",
+    "longBusinessSummary": "Chesapeake Financial Shares, Inc. operates as the bank holding company for Chesapeake Bank that provides various banking products and services for individuals and businesses in the United States. The company accepts interest and noninterest checking, savings, and money market accounts; and variable-rate and fixed-term money market accounts, as well as certificates of deposit. It also offers mortgage, and single-family residential and construction/land loans; commercial loans, which include owner-occupied commercial development, retail, builders/contractors, medical, service and professional, hospitality, nonprofits, marine industry, and agricultural and seafood loans; and consumer and other loans. In addition, the company provides merchant processing, accounts receivable financing, wealth management and trust, and mortgage banking services, as well as cash management services; and brokerage and estate management services. Chesapeake Financial Shares, Inc. was founded in 1900 and is based in Kilmarnock, Virginia.",
+    "sector": "Financial Services",
+    "industry": "Banks - Regional",
+    "country": "United States",
+    "address": "97 North Main Street",
+    "phone": "804 435 4249",
+    "website": "https://www.chesapeakefinancialshares.com"
+  },
+  "summary": {
+    "currency": "USD",
+    "marketCap": 103224440,
+    "beta": 0.301,
+    "price": {
+      "current": 22,
+      "open": 22,
+      "high": 22,
+      "low": 22,
+      "prevClose": 22,
+      "dayChangePercent": 0,
+      "volume": 100,
+      "avgVolume3m": 2877,
+      "fiftyTwoWeekHigh": 22.1,
+      "fiftyTwoWeekLow": 18.1,
+      "fiftyDayAverage": 21.5028,
+      "twoHundredDayAverage": 19.80365
+    },
+    "dividends": {
+      "rate": 0.64,
+      "yield": 0.0291,
+      "payoutRatio": 0.3147,
+      "exDate": "2025-08-29T00:00:00.000Z",
+      "lastDividend": 0.16
+    }
+  },
+  "statistics": {
+    "sharesOutstanding": 4692020,
+    "floatShares": 3886644,
+    "insiderOwnership": 0,
+    "institutionalOwnership": 0.036960002,
+    "shortRatio": null,
+    "shortPercentFloat": null,
+    "priceToBook": 0.8736052,
+    "enterpriseValue": 96539144,
+    "enterpriseToRevenue": 1.531,
+    "enterpriseToEbitda": null,
+    "trailingPE": null,
+    "forwardPE": 7.6388884,
+    "trailingEPS": 1.97,
+    "forwardEPS": 2.4,
+    "bookValue": 25.183,
+    "netIncomeToCommon": 4336882
+  },
+  "financials": {
+    "revenue": 63060908,
+    "grossProfit": 63060908,
+    "operatingIncome": null,
+    "netIncome": 4336882,
+    "ebitda": null,
+    "freeCashFlow": 0,
+    "operatingCashFlow": null,
+    "totalCash": 57865176,
+    "totalDebt": 52479000,
+    "debtToEquity": null,
+    "returnOnAssets": 0.00274,
+    "returnOnEquity": 0.039049998,
+    "grossMargin": 0,
+    "operatingMargin": 0.22648,
+    "netMargin": 0.06877,
+    "ebitdaMargin": 0,
+    "fcfMargin": null
+  },
+  "snapshots": [
+    {
+      "timestamp": "2025-09-01T20:39:30.449Z",
+      "price": 22,
+      "marketCap": 103224440,
+      "pe": 7.6388884,
+      "eps": 1.97,
+      "dividendYield": 0.0291,
+      "debtEquity": null
+    }
+  ],
+  "dividends": {
+    "2006": 0.139853,
+    "2007": 0.202545,
+    "2008": 0.23437399999999997,
+    "2009": 0.243056,
+    "2010": 0.248842,
+    "2011": 0.274883,
+    "2012": 0.3125,
+    "2013": 0.354166,
+    "2014": 0.375417,
+    "2015": 0.38833399999999996,
+    "2016": 0.40833400000000003,
+    "2017": 0.425,
+    "2018": 0.458334,
+    "2019": 0.487499,
+    "2020": 0.5,
+    "2021": 0.53,
+    "2022": 0.5800000000000001,
+    "2023": 0.605,
+    "2024": 0.625,
+    "2025": 0.48
+  },
+  "updatedAt": "2025-09-01T20:39:30.736Z"
+}

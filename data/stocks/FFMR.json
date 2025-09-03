@@ -1,0 +1,99 @@
+{
+  "ticker": "FFMR",
+  "meta": {
+    "company": "First Farmers Financial Corporation",
+    "shortName": "First Farmers Financial Corp",
+    "longBusinessSummary": "First Farmers Financial Corporation operates as the financial holding company for First Farmers Bank & Trust, which provides banking products and services to individuals, families, and businesses. The company offers business products, including checking and savings accounts, business lending, leasing, treasury management, small business loans, autobooks and home base; personal banking products, such as essential, interest, and foundation checking, regular, minor, senior and health savings accounts, certificates of deposit, and individual retirement accounts, as well as account management services; and lines of credit, term loans, real estate financing and construction loan, equipment financing, inventory loans, livestock lending, and vehicle financing, as well as leasing, and mobile and online banking services. The company also offers mortgages and construction loans, first time home buyers' loans, home equity loans, auto loans, collateral loans, and debit and credit cards. The company has offices throughout Carroll, Cass, Clay, Grant, Hamilton, Howard, Huntington, Madison, Marshall, Miami, Starke, Sullivan, Tippecanoe, Tipton, Vigo, and Wabash counties in Indiana; and offices in Coles, Edgar, and Vermilion counties in Illinois. First Farmers Financial Corporation was founded in 1885 and is headquartered in Converse, Indiana.",
+    "sector": "Financial Services",
+    "industry": "Banks - Regional",
+    "country": "United States",
+    "address": "123 North Jefferson Street",
+    "phone": "765 395 3316",
+    "website": "https://www.ffbt.com"
+  },
+  "summary": {
+    "currency": "USD",
+    "marketCap": 468190048,
+    "beta": 0.203,
+    "price": {
+      "current": 66.95,
+      "open": 66.99,
+      "high": 66.99,
+      "low": 66.99,
+      "prevClose": 66.95,
+      "dayChangePercent": 0,
+      "volume": 83,
+      "avgVolume3m": 450,
+      "fiftyTwoWeekHigh": 68,
+      "fiftyTwoWeekLow": 64.1,
+      "fiftyDayAverage": 66.4426,
+      "twoHundredDayAverage": 66.36421
+    },
+    "dividends": {
+      "rate": 2,
+      "yield": 0.0299,
+      "payoutRatio": 0.38709998,
+      "exDate": "2025-06-30T00:00:00.000Z",
+      "lastDividend": 0.5
+    }
+  },
+  "statistics": {
+    "sharesOutstanding": 6993130,
+    "floatShares": null,
+    "insiderOwnership": null,
+    "institutionalOwnership": null,
+    "shortRatio": null,
+    "shortPercentFloat": null,
+    "priceToBook": 1.7178118,
+    "enterpriseValue": 555183552,
+    "enterpriseToRevenue": 5.349,
+    "enterpriseToEbitda": null,
+    "trailingPE": null,
+    "forwardPE": null,
+    "trailingEPS": 4.96,
+    "forwardEPS": null,
+    "bookValue": 38.974,
+    "netIncomeToCommon": 35428000
+  },
+  "financials": {
+    "revenue": 103797000,
+    "grossProfit": 103797000,
+    "operatingIncome": null,
+    "netIncome": 35428000,
+    "ebitda": null,
+    "freeCashFlow": 61751000,
+    "operatingCashFlow": 61751000,
+    "totalCash": 87821000,
+    "totalDebt": 173072000,
+    "debtToEquity": null,
+    "returnOnAssets": 0.01134,
+    "returnOnEquity": 0.1329,
+    "grossMargin": 0,
+    "operatingMargin": 0.35426998,
+    "netMargin": 0.34132,
+    "ebitdaMargin": 0,
+    "fcfMargin": 0.5949208551306878
+  },
+  "snapshots": [
+    {
+      "timestamp": "2025-09-01T20:39:46.629Z",
+      "price": 66.95,
+      "marketCap": 468190048,
+      "pe": null,
+      "eps": 4.96,
+      "dividendYield": 0.0299,
+      "debtEquity": null
+    }
+  ],
+  "dividends": {
+    "2018": 1.0150000000000001,
+    "2019": 1.22,
+    "2020": 1.29,
+    "2021": 1.3900000000000001,
+    "2022": 1.73,
+    "2023": 1.88,
+    "2024": 1.93,
+    "2025": 0.99
+  },
+  "updatedAt": "2025-09-01T20:39:46.848Z"
+}

@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import fs from "fs";
+import path from "path";
+
+let stocks = [];
+let error: string | null = null;
+
+try {
+  const STOCKS_DIR = path.resolve("./data/stocks");
+  const files = fs.readdirSync(STOCKS_DIR).filter(f => f.endsWith(".json"));
+  stocks = files.map(file => {
+    const raw = fs.readFileSync(path.join(STOCKS_DIR, file), "utf-8");
+    return JSON.parse(raw);
+  });
+} catch (err: any) {
+  error = err.message;
+}
+---
+
+<BaseLayout title="Dividend King Stocks — Future Dividend">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Tab switching
+      const tabButtons = document.querySelectorAll("[data-tab]");
+      tabButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const tab = btn.dataset.tab;
+          document.querySelectorAll("table[data-view]").forEach(tbl => {
+            tbl.style.display = tbl.dataset.view === tab ? "" : "none";
+          });
+          document.querySelectorAll("[data-tab]").forEach(b => {
+            b.classList.toggle("border-blue-500", b.dataset.tab === tab);
+            b.classList.toggle("text-blue-600", b.dataset.tab === tab);
+            b.classList.toggle("border-transparent", b.dataset.tab !== tab);
+            b.classList.toggle("text-gray-600", b.dataset.tab !== tab);
+          });
+          renderPage(1); // reset to first page
+        });
+      });
+
+      // Pagination logic (shared for both tables)
+      const rowsPerPage = 15;
+      let currentPage = 1;
+
+      function renderPage(page) {
+        const activeTable = document.querySelector("table[data-view]:not([style*='display: none'])");
+        if (!activeTable) return;
+        const rows = Array.from(activeTable.querySelectorAll("tbody tr"));
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+        rows.forEach((row, idx) => {
+          row.style.display =
+            idx >= (page - 1) * rowsPerPage && idx < page * rowsPerPage
+              ? ""
+              : "none";
+        });
+
+        document.getElementById("page-indicator").textContent =
+          `Page ${page} / ${totalPages}`;
+        currentPage = page;
+      }
+
+      document.getElementById("prev-btn").addEventListener("click", () => {
+        if (currentPage > 1) renderPage(currentPage - 1);
+      });
+      document.getElementById("next-btn").addEventListener("click", () => {
+        const activeTable = document.querySelector("table[data-view]:not([style*='display: none'])");
+        if (!activeTable) return;
+        const rows = activeTable.querySelectorAll("tbody tr").length;
+        const totalPages = Math.ceil(rows / rowsPerPage);
+        if (currentPage < totalPages) renderPage(currentPage + 1);
+      });
+
+      renderPage(currentPage);
+    });
+  </script>
+
+  <body class="bg-gray-50 p-6 font-sans text-sm text-gray-800">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-lg font-bold mb-4">Dividend King Stocks</h1>
+
+      <!-- Tabs -->
+      <div class="flex space-x-4 border-b mb-3">
+        <button data-tab="overview" class="px-3 py-1 border-b-2 border-blue-500 text-blue-600">Overview</button>
+        <button data-tab="dividends" class="px-3 py-1 border-b-2 border-transparent text-gray-600">Dividends</button>
+      </div>
+
+      {error ? (
+        <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
+          Error loading data: {error}
+        </div>
+      ) : (
+        <div class="overflow-x-auto border border-gray-200 rounded-lg shadow-sm bg-white">
+          
+          <!-- Overview Table -->
+          <table data-view="overview" class="min-w-full text-xs">
+            <thead class="bg-gray-100 border-b border-gray-200">
+              <tr class="text-left">
+                <th class="px-2 py-2 font-semibold">Ticker</th>
+                <th class="px-2 py-2 font-semibold">Company</th>
+                <th class="px-2 py-2 font-semibold">Sector</th>
+                <th class="px-2 py-2 font-semibold">Industry</th>
+                <th class="px-2 py-2 font-semibold text-right">Price</th>
+                <th class="px-2 py-2 font-semibold text-right">Market Cap</th>
+                <th class="px-2 py-2 font-semibold text-right">P/E</th>
+                <th class="px-2 py-2 font-semibold text-right">EPS</th>
+                <th class="px-2 py-2 font-semibold text-right">Yield</th>
+                <th class="px-2 py-2 font-semibold text-right">Debt/Eq</th>
+                <th class="px-2 py-2 font-semibold text-right">Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              {stocks.map((s) => {
+                const latest = s.snapshots?.[s.snapshots.length - 1] || {};
+                return (
+                  <tr class="border-b last:border-0 hover:bg-gray-50">
+                    <td class="px-2 py-1 font-bold">{s.ticker}</td>
+                    <td class="px-2 py-1">{s.meta.company}</td>
+                    <td class="px-2 py-1">{s.meta.sector}</td>
+                    <td class="px-2 py-1">{s.meta.industry}</td>
+                    <td class="px-2 py-1 text-right">{latest.price?.toFixed(2) ?? "N/A"}</td>
+                    <td class="px-2 py-1 text-right">{latest.marketCap ? (latest.marketCap / 1e9).toFixed(2) + "B" : "N/A"}</td>
+                    <td class="px-2 py-1 text-right">{latest.pe ?? "N/A"}</td>
+                    <td class="px-2 py-1 text-right">{latest.eps ?? "N/A"}</td>
+                    <td class="px-2 py-1 text-right">{latest.dividendYield ? (latest.dividendYield*100).toFixed(2)+"%" : "N/A"}</td>
+                    <td class="px-2 py-1 text-right">{latest.debtEquity ?? "N/A"}</td>
+                    <td class="px-2 py-1 text-right">{latest.timestamp ? new Date(latest.timestamp).toLocaleDateString() : "N/A"}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
+          <!-- Dividends Table -->
+          <table data-view="dividends" class="min-w-full text-xs hidden">
+            <thead class="bg-gray-100 border-b border-gray-200">
+              <tr class="text-left">
+                <th class="px-2 py-2 font-semibold">Ticker</th>
+                <th class="px-2 py-2 font-semibold">Last Dividend</th>
+                <th class="px-2 py-2 font-semibold">Yield</th>
+                <th class="px-2 py-2 font-semibold">5Y Avg Yield</th>
+                <th class="px-2 py-2 font-semibold">Payout Ratio</th>
+                <th class="px-2 py-2 font-semibold">Years Increasing</th>
+              </tr>
+            </thead>
+            <tbody>
+              {stocks.map((s) => {
+                const divs = s.dividends || {};
+                const years = Object.keys(divs).sort();
+                let consecutive = 0;
+                if (years.length > 1) {
+                  consecutive = 1;
+                  for (let i = years.length - 1; i > 0; i--) {
+                    const curr = divs[years[i]];
+                    const prev = divs[years[i - 1]];
+                    if (curr > prev) {
+                      consecutive++;
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                return (
+                  <tr class="border-b last:border-0 hover:bg-gray-50">
+                    <td class="px-2 py-1 font-bold">{s.ticker}</td>
+                    <td class="px-2 py-1 text-right">
+                      {s.summary?.dividends?.lastDividend ?? "N/A"}
+                    </td>
+                    <td class="px-2 py-1 text-right">
+                      {s.summary?.dividends?.yield ? (s.summary.dividends.yield*100).toFixed(2)+"%" : "N/A"}
+                    </td>
+                    <td class="px-2 py-1 text-right">
+                      {s.summary?.fiveYearAvgDividendYield ? s.summary.fiveYearAvgDividendYield+"%" : "N/A"}
+                    </td>
+                    <td class="px-2 py-1 text-right">
+                      {s.summary?.dividends?.payoutRatio ? (s.summary.dividends.payoutRatio*100).toFixed(1)+"%" : "N/A"}
+                    </td>
+                    <td class="px-2 py-1 text-right">{consecutive}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      <!-- Pagination -->
+      <div class="flex items-center justify-between mt-3 text-xs">
+        <button id="prev-btn" class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300">◀ Prev</button>
+        <span id="page-indicator" class="font-medium"></span>
+        <button id="next-btn" class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300">Next ▶</button>
+      </div>
+    </div>
+  </body>
+</BaseLayout>

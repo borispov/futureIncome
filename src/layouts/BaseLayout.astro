@@ -1,0 +1,23 @@
+---
+import '../styles/global.css';
+const { title = "Future Dividend" } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <footer>
+      <p style="font-size:12px;color:gray;text-align:center;padding:12px;border-top:1px solid #ccc;">
+        Disclaimer: Future Dividend is not a financial advisor. Nothing on this site is investment advice or a recommendation to buy or sell any security.
+      </p>
+    </footer>
+  </body>
+
+  
+
+  <script is:inline src="./node_modules/preline/dist/index.js"></script>
+</html>

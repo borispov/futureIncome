@@ -1,0 +1,74 @@
+---
+export interface Props {
+  stocks: any[];
+}
+
+const { stocks } = Astro.props;
+---
+
+<div class="overflow-x-auto border border-gray-200 rounded-lg shadow-sm bg-white">
+  <table class="min-w-full text-xs" data-view="dividends">
+    <thead class="bg-gray-100 border-b border-gray-200">
+      <tr class="text-left">
+        <th class="px-2 py-2 font-semibold">Ticker</th>
+        <th class="px-2 py-2 font-semibold text-right">Yield</th>
+        <th class="px-2 py-2 font-semibold text-right">Dividend Amt</th>
+        <th class="px-2 py-2 font-semibold text-right">Years Increasing</th>
+        <th class="px-2 py-2 font-semibold text-right">DGR 1Y</th>
+        <th class="px-2 py-2 font-semibold text-right">DGR 3Y</th>
+        <th class="px-2 py-2 font-semibold text-right">DGR 5Y</th>
+        <th class="px-2 py-2 font-semibold text-right">DGR 10Y</th>
+        <th class="px-2 py-2 font-semibold text-right">Most Recent Increase</th>
+        <th class="px-2 py-2 font-semibold text-right">Ex-Dividend Date</th>
+        <th class="px-2 py-2 font-semibold text-right">Overall Score</th>
+        <th class="px-2 py-2 font-semibold text-right">Recessions Survived</th>
+      </tr>
+    </thead>
+    <tbody>
+      {stocks.map((s) => {
+        const divs = s.dividends || {};
+        const years = Object.keys(divs).sort();
+        let consecutive = 0;
+        if (years.length > 1) {
+          consecutive = 1;
+          for (let i = years.length - 1; i > 0; i--) {
+            const curr = divs[years[i]];
+            const prev = divs[years[i - 1]];
+            if (curr > prev) {
+              consecutive++;
+            } else {
+              break;
+            }
+          }
+        }
+
+        const lastDividend = s.summary?.dividends?.rate ?? null;
+        const dividendYield = s.summary?.dividends?.yield ?? null;
+        const exDate = s.summary?.dividends?.exDate
+          ? new Date(s.summary.dividends.exDate).toLocaleDateString()
+          : "N/A";
+
+        return (
+          <tr class="border-b last:border-0 hover:bg-gray-50">
+            <td class="px-2 py-1 font-bold">{s.ticker}</td>
+            <td class="px-2 py-1 text-right">
+              {dividendYield ? (dividendYield * 100).toFixed(2) + "%" : "N/A"}
+            </td>
+            <td class="px-2 py-1 text-right">
+              {lastDividend ?? "N/A"}
+            </td>
+            <td class="px-2 py-1 text-right">{consecutive}</td>
+            <td class="px-2 py-1 text-right">Soon</td>
+            <td class="px-2 py-1 text-right">Soon</td>
+            <td class="px-2 py-1 text-right">Soon</td>
+            <td class="px-2 py-1 text-right">Soon</td>
+            <td class="px-2 py-1 text-right">Soon</td>
+            <td class="px-2 py-1 text-right">{exDate}</td>
+            <td class="px-2 py-1 text-right">Soon</td>
+            <td class="px-2 py-1 text-right">Soon</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>

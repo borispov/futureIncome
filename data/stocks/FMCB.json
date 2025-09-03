@@ -1,0 +1,100 @@
+{
+  "ticker": "FMCB",
+  "meta": {
+    "company": "Farmers & Merchants Bancorp",
+    "shortName": "Farmers & Merchants Bancorp",
+    "longBusinessSummary": "Farmers & Merchants Bancorp operates as the bank holding company for Farmers & Merchants Bank of Central California that provides various banking services to businesses and individuals in the United States. The company offers deposit products, including checking, savings, money market, time certificates of deposit, and individual retirement accounts. It also provides a range of lending products, such as commercial, commercial and residential real estate, real estate construction, agribusiness, and consumer loans, as well as equipment leases and credit card services; commercial products, including term loans, lines of credit and other working capital financing, and letters of credit; and financing products, such as automobile financing, home improvement, and home equity lines of credit. In addition, the company provides specialized services that include credit card programs for merchants, lockbox and other collection services, account reconciliation, investment sweep, online account access, and electronic funds transfers through domestic and international wire and automated clearinghouse; online banking services; and investment products, such as mutual funds and annuities. Farmers & Merchants Bancorp was founded in 1916 and is headquartered in Lodi, California.",
+    "sector": "Financial Services",
+    "industry": "Banks - Regional",
+    "country": "United States",
+    "address": "111 W. Pine Street",
+    "phone": "209 367 2300",
+    "website": "https://www.fmbonline.com",
+    "employees": 373
+  },
+  "summary": {
+    "currency": "USD",
+    "marketCap": 751245056,
+    "beta": 0.036,
+    "price": {
+      "current": 1040,
+      "open": 1030,
+      "high": 1030,
+      "low": 1030,
+      "prevClose": 1025.01,
+      "dayChangePercent": 0.014624238,
+      "volume": 5,
+      "avgVolume3m": 541,
+      "fiftyTwoWeekHigh": 1099,
+      "fiftyTwoWeekLow": 950,
+      "fiftyDayAverage": 1016.2142,
+      "twoHundredDayAverage": 1018.4404
+    },
+    "dividends": {
+      "rate": 20,
+      "yield": 0.019199999,
+      "payoutRatio": 0.1466,
+      "exDate": "2025-09-11T00:00:00.000Z",
+      "lastDividend": 9.3
+    }
+  },
+  "statistics": {
+    "sharesOutstanding": 722351,
+    "floatShares": 588308,
+    "insiderOwnership": 0.12642999,
+    "institutionalOwnership": 0.0063300002,
+    "shortRatio": null,
+    "shortPercentFloat": null,
+    "priceToBook": 1.167815,
+    "enterpriseValue": 437764320,
+    "enterpriseToRevenue": 1.923,
+    "enterpriseToEbitda": null,
+    "trailingPE": null,
+    "forwardPE": null,
+    "trailingEPS": 126.88,
+    "forwardEPS": 2.35,
+    "bookValue": 890.552,
+    "netIncomeToCommon": 90031000
+  },
+  "financials": {
+    "revenue": 227619008,
+    "grossProfit": 227619008,
+    "operatingIncome": null,
+    "netIncome": 90031000,
+    "ebitda": null,
+    "freeCashFlow": 109650000,
+    "operatingCashFlow": 109650000,
+    "totalCash": 291948992,
+    "totalDebt": 10519000,
+    "debtToEquity": null,
+    "returnOnAssets": 0.01676,
+    "returnOnEquity": 0.15071,
+    "grossMargin": 0,
+    "operatingMargin": 0.55333,
+    "netMargin": 0.39553002,
+    "ebitdaMargin": 0,
+    "fcfMargin": 0.4817260252711408
+  },
+  "snapshots": [
+    {
+      "timestamp": "2025-09-01T20:39:48.149Z",
+      "price": 1040,
+      "marketCap": 751245056,
+      "pe": null,
+      "eps": 126.88,
+      "dividendYield": 0.019199999,
+      "debtEquity": null
+    }
+  ],
+  "dividends": {
+    "2018": 13.9,
+    "2019": 14.2,
+    "2020": 14.75,
+    "2021": 15.3,
+    "2022": 16.15,
+    "2023": 17.1,
+    "2024": 18.1,
+    "2025": 9.3
+  },
+  "updatedAt": "2025-09-01T20:39:48.527Z"
+}
