@@ -1,0 +1,46 @@
+---
+export interface Tab {
+  id: string;
+  label: string;
+}
+
+export interface Props {
+  tabs: Tab[];
+  active: string;
+}
+
+const { tabs, active } = Astro.props;
+---
+
+<div class="flex space-x-4 border-b mb-3" id="tabs">
+  {tabs.map(tab => (
+    <button
+      data-tab={tab.id}
+      class={`px-3 py-1 border-b-2 text-sm font-medium ${
+        tab.id === active
+          ? "border-blue-500 text-blue-600"
+          : "border-transparent text-gray-600"
+      }`}
+    >
+      {tab.label}
+    </button>
+  ))}
+</div>
+
+<script client:load>
+  const tabs = document.querySelectorAll("#tabs [data-tab]");
+  tabs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tab = btn.dataset.tab;
+      // update highlights
+      tabs.forEach(b => {
+        b.classList.toggle("border-blue-500", b.dataset.tab === tab);
+        b.classList.toggle("text-blue-600", b.dataset.tab === tab);
+        b.classList.toggle("border-transparent", b.dataset.tab !== tab);
+        b.classList.toggle("text-gray-600", b.dataset.tab !== tab);
+      });
+      // dispatch event for parent
+      document.dispatchEvent(new CustomEvent("tabChange", { detail: { tab } }));
+    });
+  });
+</script>

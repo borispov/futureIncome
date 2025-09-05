@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
 const { title = "Future Dividend" } = Astro.props;
 ---
 <html lang="en">
@@ -9,6 +10,7 @@ const { title = "Future Dividend" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <Navbar />
     <slot />
     <footer>
       <p style="font-size:12px;color:gray;text-align:center;padding:12px;border-top:1px solid #ccc;">

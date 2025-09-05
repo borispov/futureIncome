@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DripCalculator from "../../components/calculators/DripCalculator";
+---
+
+<BaseLayout title="DRIP Investing Calculator">
+  <main class="max-w-5xl mx-auto p-6 text-sm text-gray-800">
+    <h1 class="text-lg font-bold mb-2">DRIP Investing</h1>
+    <p class="mb-4 text-gray-600">
+      Use this calculator to estimate how much your money could grow with dividend reinvestment.
+    </p>
+
+    <DripCalculator client:load />
+  </main>
+</BaseLayout>

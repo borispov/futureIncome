@@ -12,17 +12,20 @@
   "dependencies": {
     "@astrojs/react": "^3.6.3",
     "astro": "^4.12.0",
+    "chart": "^0.1.2",
+    "lucide-react": "^0.542.0",
     "pino": "^9.9.0",
     "preline": "^3.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "recharts": "^3.1.2",
     "yahoo-finance2": "^2.13.3"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
+    "@types/node": "^20.10.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@types/node": "^20.10.0",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.7.1"
   }

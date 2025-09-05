@@ -1,0 +1,44 @@
+---
+export interface Props {
+  stocks: any[];
+}
+const { stocks } = Astro.props;
+---
+
+<table class="min-w-full text-xs">
+  <thead class="bg-gray-100 border-b border-gray-200">
+    <tr class="text-left">
+      <th class="px-2 py-2 font-semibold">Ticker</th>
+      <th class="px-2 py-2 font-semibold">Company</th>
+      <th class="px-2 py-2 font-semibold">Sector</th>
+      <th class="px-2 py-2 font-semibold">Industry</th>
+      <th class="px-2 py-2 font-semibold text-right">Price</th>
+      <th class="px-2 py-2 font-semibold text-right">Market Cap</th>
+      <th class="px-2 py-2 font-semibold text-right">P/E</th>
+      <th class="px-2 py-2 font-semibold text-right">EPS</th>
+      <th class="px-2 py-2 font-semibold text-right">Yield</th>
+      <th class="px-2 py-2 font-semibold text-right">Debt/Eq</th>
+      <th class="px-2 py-2 font-semibold text-right">Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    {stocks.map((s) => {
+      const latest = s.snapshots?.[s.snapshots.length - 1] || {};
+      return (
+        <tr class="border-b last:border-0 hover:bg-gray-50">
+          <td class="px-2 py-1 font-bold">{s.ticker}</td>
+          <td class="px-2 py-1">{s.meta.company}</td>
+          <td class="px-2 py-1">{s.meta.sector}</td>
+          <td class="px-2 py-1">{s.meta.industry}</td>
+          <td class="px-2 py-1 text-right">{latest.price?.toFixed(2) ?? "N/A"}</td>
+          <td class="px-2 py-1 text-right">{latest.marketCap ? (latest.marketCap / 1e9).toFixed(2) + "B" : "N/A"}</td>
+          <td class="px-2 py-1 text-right">{latest.pe ?? "N/A"}</td>
+          <td class="px-2 py-1 text-right">{latest.eps ?? "N/A"}</td>
+          <td class="px-2 py-1 text-right">{latest.dividendYield ? (latest.dividendYield*100).toFixed(2)+"%" : "N/A"}</td>
+          <td class="px-2 py-1 text-right">{latest.debtEquity ?? "N/A"}</td>
+          <td class="px-2 py-1 text-right">{latest.timestamp ? new Date(latest.timestamp).toLocaleDateString() : "N/A"}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
