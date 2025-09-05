@@ -14,9 +14,9 @@ let error: string | null = null;
 const __dirname = path.resolve();
 
 try {
-  const STOCKS_DIR = path.resolve(path.basename(__dirname), "../../data/stocks");
-  console.log(STOCKS_DIR)
-  // const STOCKS_DIR = path.resolve("~/data/stocks");
+  // const STOCKS_DIR = path.resolve(path.basename(__dirname), "../../data/stocks");
+  // console.log(STOCKS_DIR)
+  const STOCKS_DIR = path.resolve("./data/stocks");
   const files = fs.readdirSync(STOCKS_DIR).filter(f => f.endsWith(".json"));
   stocks = files.map(file => JSON.parse(fs.readFileSync(path.join(STOCKS_DIR, file), "utf-8")));
 } catch (err: any) {
