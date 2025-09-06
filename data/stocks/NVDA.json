@@ -1,0 +1,131 @@
+{
+  "ticker": "NVDA",
+  "meta": {
+    "company": "NVIDIA Corporation",
+    "shortName": "NVIDIA Corporation",
+    "longBusinessSummary": "NVIDIA Corporation, a computing infrastructure company, provides graphics and compute and networking solutions in the United States, Singapore, Taiwan, China, Hong Kong, and internationally. The Compute & Networking segment includes its Data Centre accelerated computing platforms and artificial intelligence solutions and software; networking; automotive platforms and autonomous and electric vehicle solutions; Jetson for robotics and other embedded platforms; and DGX Cloud computing services. The Graphics segment offers GeForce GPUs for gaming and PCs, the GeForce NOW game streaming service and related infrastructure, and solutions for gaming platforms; Quadro/NVIDIA RTX GPUs for enterprise workstation graphics; virtual GPU or vGPU software for cloud-based visual and virtual computing; automotive platforms for infotainment systems; and Omniverse software for building and operating industrial AI and digital twin applications. It also customized agentic solutions designed in collaboration with NVIDIA to accelerate enterprise AI adoption. The company's products are used in gaming, professional visualization, data center, and automotive markets. It sells its products to original equipment manufacturers, original device manufacturers, system integrators and distributors, independent software vendors, cloud service providers, consumer internet companies, add-in board manufacturers, distributors, automotive manufacturers and tier-1 automotive suppliers, and other ecosystem participants. NVIDIA Corporation was incorporated in 1993 and is headquartered in Santa Clara, California.",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "country": "United States",
+    "address": "2788 San Tomas Expressway",
+    "phone": "408 486 2000",
+    "website": "https://www.nvidia.com",
+    "employees": 36000
+  },
+  "summary": {
+    "currency": "USD",
+    "marketCap": 4066436186112,
+    "beta": 2.102,
+    "price": {
+      "current": 167.02,
+      "open": 168.03,
+      "high": 169.03,
+      "low": 164.07,
+      "prevClose": 171.66,
+      "dayChangePercent": -0.027030202,
+      "volume": 221229803,
+      "avgVolume3m": 174395111,
+      "fiftyTwoWeekHigh": 184.48,
+      "fiftyTwoWeekLow": 86.62,
+      "fiftyDayAverage": 172.319,
+      "twoHundredDayAverage": 139.2198
+    },
+    "dividends": {
+      "increasingYears": 2,
+      "rate": 0.04,
+      "yield": 0.0002,
+      "payoutRatio": 0.0114,
+      "exDate": "2025-09-11T00:00:00.000Z",
+      "lastDividend": 0.01
+    }
+  },
+  "statistics": {
+    "sharesOutstanding": 24347000832,
+    "floatShares": 23321682000,
+    "insiderOwnership": 0.04334,
+    "institutionalOwnership": 0.68974996,
+    "shortRatio": 1.3,
+    "shortPercentFloat": 0.0088,
+    "priceToBook": 40.60783,
+    "enterpriseValue": 4012393103360,
+    "enterpriseToRevenue": 24.285,
+    "enterpriseToEbitda": 40.826,
+    "trailingPE": null,
+    "forwardPE": 26.383131,
+    "trailingEPS": 3.51,
+    "forwardEPS": 4.12,
+    "bookValue": 4.113,
+    "netIncomeToCommon": 86597001216
+  },
+  "financials": {
+    "revenue": 165217992704,
+    "revenueGrowth": 0.556,
+    "grossProfit": 115399999488,
+    "operatingIncome": null,
+    "netIncome": 86597001216,
+    "ebitda": 98280996864,
+    "freeCashFlow": 52436750336,
+    "operatingCashFlow": 77035003904,
+    "totalCash": 56790999040,
+    "totalDebt": 10597999616,
+    "debtToEquity": 10.584,
+    "returnOnAssets": 0.53094,
+    "returnOnEquity": 1.09417,
+    "grossMargin": 0.69847,
+    "earningsGrowth": 0.612,
+    "operatingMargin": 0.60842997,
+    "netMargin": 0.52414,
+    "ebitdaMargin": 0.59486,
+    "fcfMargin": 0.31737917570481705,
+    "lastFiveYears": [
+      {
+        "date": "2025-01-31T00:00:00.000Z",
+        "revenue": 130497000000,
+        "netIncome": 72880000000
+      },
+      {
+        "date": "2024-01-31T00:00:00.000Z",
+        "revenue": 60922000000,
+        "netIncome": 29760000000
+      },
+      {
+        "date": "2023-01-31T00:00:00.000Z",
+        "revenue": 26974000000,
+        "netIncome": 4368000000
+      },
+      {
+        "date": "2022-01-31T00:00:00.000Z",
+        "revenue": 26914000000,
+        "netIncome": 9752000000
+      }
+    ]
+  },
+  "snapshots": [
+    {
+      "timestamp": "2025-09-06T07:43:54.850Z",
+      "price": 167.02,
+      "marketCap": 4066436186112,
+      "pe": 26.383131,
+      "eps": 3.51,
+      "dividendYield": 0.0002,
+      "debtEquity": 10.584
+    }
+  ],
+  "dividends": {
+    "2012": 0.001875,
+    "2013": 0.00775,
+    "2014": 0.0085,
+    "2015": 0.009899999999999999,
+    "2016": 0.012125,
+    "2017": 0.01425,
+    "2018": 0.01525,
+    "2019": 0.016,
+    "2020": 0.016,
+    "2021": 0.016,
+    "2022": 0.016,
+    "2023": 0.016,
+    "2024": 0.034,
+    "2025": 0.02
+  },
+  "updatedAt": "2025-09-06T07:43:55.334Z"
+}

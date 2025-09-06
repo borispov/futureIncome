@@ -36,10 +36,7 @@
       "yield": 0.047,
       "payoutRatio": 0.5622,
       "exDate": "2025-09-15T00:00:00.000Z",
-      "lastDividend": 1.27,
-      "dgr3": 4.71268841304644,
-      "dgr5": 10.286313147852999,
-      "dgr10": null
+      "lastDividend": 1.27
     }
   },
   "statistics": {
@@ -62,6 +59,7 @@
   },
   "financials": {
     "revenue": 7097299968,
+    "revenueGrowth": -0.006,
     "grossProfit": 3638599936,
     "operatingIncome": null,
     "netIncome": 1986700032,
@@ -74,15 +72,37 @@
     "returnOnAssets": 0.10363,
     "returnOnEquity": 0.18716,
     "grossMargin": 0.51267,
+    "earningsGrowth": 0.061,
     "operatingMargin": 0.27754998,
     "netMargin": 0.28724,
     "ebitdaMargin": 0.38695,
     "fcfMargin": 0.11428817658225264,
-    "earningsGrowth": 0.061
+    "lastFiveYears": [
+      {
+        "date": "2024-12-31T00:00:00.000Z",
+        "revenue": 7093600000,
+        "netIncome": 2044300000
+      },
+      {
+        "date": "2023-12-31T00:00:00.000Z",
+        "revenue": 6460500000,
+        "netIncome": 1744300000
+      },
+      {
+        "date": "2022-12-31T00:00:00.000Z",
+        "revenue": 6488400000,
+        "netIncome": 1521800000
+      },
+      {
+        "date": "2021-12-31T00:00:00.000Z",
+        "revenue": 7671900000,
+        "netIncome": 3002400000
+      }
+    ]
   },
   "snapshots": [
     {
-      "timestamp": "2025-09-06T07:21:19.751Z",
+      "timestamp": "2025-09-06T07:43:17.900Z",
       "price": 108.16,
       "marketCap": 23764375552,
       "pe": 11.213857,
@@ -133,5 +153,5 @@
     "2024": 4.96,
     "2025": 2.54
   },
-  "updatedAt": "2025-09-06T07:21:20.414Z"
+  "updatedAt": "2025-09-06T07:43:18.565Z"
 }

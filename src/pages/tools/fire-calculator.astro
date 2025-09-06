@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FireCalc from "../../components/calculators/FireCalc";
+---
+<BaseLayout title="Time to FIRE Calculator">
+  <main class="max-w-5xl mx-auto p-6 text-sm text-gray-800">
+    <h1 class="text-lg font-bold mb-2">Time to FIRE</h1>
+    <p class="mb-4 text-gray-600">
+      Solve years to Financial Independence using real (inflation-adjusted) returns, expenses in today's currency, and a chosen withdrawal rate.
+    </p>
+    <FireCalc client:load />
+  </main>
+</BaseLayout>

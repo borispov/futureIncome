@@ -182,7 +182,6 @@ async function parseStockData(ticker: string): Promise<StockFile> {
       })
     }
 
-    console.log('last five year data: \n',lastFiveYearsData)
 
 
   const meta: MetaData = {
@@ -284,6 +283,9 @@ async function parseStockData(ticker: string): Promise<StockFile> {
     debtEquity: fin.debtToEquity ?? null,
   };
 
+  console.log('last five year data: \n', financials.lastFiveYears)
+  console.log('---------------')
+  console.log('Revenue Growth...:\n', financials.revenueGrowth)
   // Dividend history
   const dividends: Record<string, number> = {};
   try {
@@ -363,10 +365,10 @@ function sleep(ms: number) {
 async function main() {
 
   const tickers = [
-    "TROW", 
+    "NVDA", 
   ]
 
-  for (const t of tickers) {
+  for (const t of champions) {
     try {
       const parsed = await parseStockData(t);
       saveStockData(parsed);
