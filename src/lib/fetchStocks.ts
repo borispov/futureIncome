@@ -2,8 +2,9 @@ import fs from "fs";
 import path from "path";
 import yahooFinance from "yahoo-finance2";
 import pino from "pino";
+import getConsecutiveYears from "../../script/getConsecutiveYears";
 
-import { champions } from "../data/champions.json";
+import { champions } from "../../data/champions.json";
 
 // -----------------------------
 // Schema (our DB JSON)
@@ -40,6 +41,7 @@ export interface SummaryData {
     twoHundredDayAverage: number | null;
   };
   dividends: {
+    increasingYears: number | null;
     rate: number | null;
     yield: number | null;
     payoutRatio: number | null;
@@ -85,6 +87,11 @@ export interface Financials {
   netMargin: number | null;
   ebitdaMargin: number | null;
   fcfMargin?: number | null;
+  earningsGrowth?: number | null;
+  lastFiveYears?: {
+    revenue: number | null;
+    netIncome: number | null;
+  }[] | null;
 }
 
 export interface Snapshot {
@@ -118,25 +125,65 @@ const MAX_AGE_DAYS = 7;
 // -----------------------------
 // Core
 // -----------------------------
+
+  // Fetch additional data: financials (TTM and YoY)
+
 async function parseStockData(ticker: string): Promise<StockFile> {
   logger.info({ ticker }, "Fetching stock data");
 
   // Let yahooFinance return loosely typed data
-  const data: any = await yahooFinance.quoteSummary(ticker, {
-    modules: [
-      "price",
-      "assetProfile",
-      "summaryDetail",
-      "defaultKeyStatistics",
-      "financialData",
-    ],
-  });
+  let data: any = {};
+
+  function getLastFiveYears(): Date {
+    const endDate = new Date();
+    const startDate = new Date();
+    startDate.setFullYear(endDate.getFullYear() - 5);
+    return startDate
+  }
+  const lastFiveYears = getLastFiveYears()
+
+  try {
+    data = await yahooFinance.quoteSummary(ticker, {
+      period1: lastFiveYears,
+      modules: [
+        "price",
+        "assetProfile",
+        "summaryDetail",
+        "defaultKeyStatistics",
+        "financialData",
+        "incomeStatementHistory", // revenue over period
+        "cashflowStatementHistory" // netIncome over period
+      ],
+    });
+
+
+  } catch(e) {
+    logger.error({ ticker, err: e }, "Error fetching stock data");
+    throw e;
+  }
 
   const price = data.price ?? {};
   const profile = data.assetProfile ?? {};
   const summary = data.summaryDetail ?? {};
   const stats = data.defaultKeyStatistics ?? {};
   const fin = data.financialData ?? {};
+
+
+    logger.info({ ticker }, "ADDING historical Revenue & Net Income stats ");
+    let lastFiveYearsData = []
+    // loop 4 times and each loop get { revenue } from incomeStatementHistory and { netIncome} from cashflowStatementHistory
+    for (let i = 0; i < 4; i++) {
+      const incomeItem = data.incomeStatementHistory?.incomeStatementHistory[i]
+      const cashflowItem = data.cashflowStatementHistory?.cashflowStatements[i]
+      lastFiveYearsData.push({
+        date: incomeItem.endDate,
+        revenue: incomeItem.totalRevenue,
+        netIncome: cashflowItem.netIncome
+      })
+    }
+
+    console.log('last five year data: \n',lastFiveYearsData)
+
 
   const meta: MetaData = {
     company: price.longName || "N/A",
@@ -170,6 +217,7 @@ async function parseStockData(ticker: string): Promise<StockFile> {
       twoHundredDayAverage: summary.twoHundredDayAverage ?? null,
     },
     dividends: {
+      increasingYears: await getConsecutiveYears(ticker),
       rate: summary.dividendRate ?? null,
       yield: summary.dividendYield ?? null,
       payoutRatio: summary.payoutRatio ?? null,
@@ -205,6 +253,7 @@ async function parseStockData(ticker: string): Promise<StockFile> {
 
   const financials: Financials = {
     revenue: fin.totalRevenue ?? null,
+    revenueGrowth: fin.revenueGrowth ?? null,
     grossProfit: fin.grossProfits ?? null,
     operatingIncome: fin.operatingIncome ?? null,
     netIncome: stats.netIncomeToCommon ?? null,
@@ -217,10 +266,12 @@ async function parseStockData(ticker: string): Promise<StockFile> {
     returnOnAssets: fin.returnOnAssets ?? null,
     returnOnEquity: fin.returnOnEquity ?? null,
     grossMargin: fin.grossMargins ?? null,
+    earningsGrowth: fin.earningsGrowth ?? null,
     operatingMargin: fin.operatingMargins ?? null,
-    netMargin: fin.profitMargins ?? null,
+    netMargin: fin.profitMargins ?? null, // same as Profit Margins
     ebitdaMargin: fin.ebitdaMargins ?? null,
     fcfMargin: fin.totalRevenue && fcf ? fcf / fin.totalRevenue : null,
+    lastFiveYears: lastFiveYearsData ?? null,
   };
 
   const snapshot: Snapshot = {
@@ -269,7 +320,8 @@ function saveStockData(parsed: StockFile) {
   const filePath = path.join(DATA_DIR, `${parsed.ticker}.json`);
   let existing: StockFile | null = null;
 
-  if (fs.existsSync(filePath)) {
+  // if (fs.existsSync(filePath)) { // commented out to enable data filling manually
+  if (false) {
     existing = JSON.parse(fs.readFileSync(filePath, "utf-8")) as StockFile;
 
     // freshness check
@@ -311,10 +363,10 @@ function sleep(ms: number) {
 async function main() {
 
   const tickers = [
-    "O", 
+    "TROW", 
   ]
 
-  for (const t of champions) {
+  for (const t of tickers) {
     try {
       const parsed = await parseStockData(t);
       saveStockData(parsed);

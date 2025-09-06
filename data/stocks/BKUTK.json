@@ -13,28 +13,32 @@
   },
   "summary": {
     "currency": "USD",
-    "marketCap": 125350000,
+    "marketCap": 127350064,
     "beta": null,
     "price": {
-      "current": 500,
-      "open": 497.75,
-      "high": 497.75,
-      "low": 496.75,
-      "prevClose": 497.75,
-      "dayChangePercent": 0.00452034,
-      "volume": 11,
-      "avgVolume3m": 57,
+      "current": 510,
+      "open": 500,
+      "high": 510,
+      "low": 500,
+      "prevClose": 497,
+      "dayChangePercent": 0.02615694,
+      "volume": 13,
+      "avgVolume3m": 40,
       "fiftyTwoWeekHigh": 518,
-      "fiftyTwoWeekLow": 410,
-      "fiftyDayAverage": 497.40256,
-      "twoHundredDayAverage": 484.0334
+      "fiftyTwoWeekLow": 414.99,
+      "fiftyDayAverage": 496.92255,
+      "twoHundredDayAverage": 484.35336
     },
     "dividends": {
+      "increasingYears": 25,
       "rate": 19,
-      "yield": 0.038,
+      "yield": 0.0373,
       "payoutRatio": 0.2344,
       "exDate": "2025-06-30T00:00:00.000Z",
-      "lastDividend": 9.5
+      "lastDividend": 9.5,
+      "dgr3": 3.887332412441835,
+      "dgr5": 4.2836189040638795,
+      "dgr10": null
     }
   },
   "statistics": {
@@ -50,7 +54,7 @@
     "enterpriseToEbitda": null,
     "trailingPE": null,
     "forwardPE": null,
-    "trailingEPS": 80,
+    "trailingEPS": 80.02,
     "forwardEPS": null,
     "bookValue": null,
     "netIncomeToCommon": null
@@ -72,16 +76,17 @@
     "operatingMargin": 0,
     "netMargin": 0,
     "ebitdaMargin": 0,
-    "fcfMargin": null
+    "fcfMargin": null,
+    "earningsGrowth": null
   },
   "snapshots": [
     {
-      "timestamp": "2025-09-01T20:39:19.238Z",
-      "price": 500,
-      "marketCap": 125350000,
+      "timestamp": "2025-09-06T01:39:37.626Z",
+      "price": 510,
+      "marketCap": 127350064,
       "pe": null,
-      "eps": 80,
-      "dividendYield": 0.038,
+      "eps": 80.02,
+      "dividendYield": 0.0373,
       "debtEquity": null
     }
   ],
@@ -110,5 +115,5 @@
     "2024": 18.75,
     "2025": 9.5
   },
-  "updatedAt": "2025-09-01T20:39:19.470Z"
+  "updatedAt": "2025-09-06T01:39:38.122Z"
 }

@@ -13,28 +13,32 @@
   },
   "summary": {
     "currency": "USD",
-    "marketCap": 468190048,
-    "beta": 0.203,
+    "marketCap": 468469760,
+    "beta": 0.198,
     "price": {
-      "current": 66.95,
+      "current": 66.99,
       "open": 66.99,
       "high": 66.99,
       "low": 66.99,
-      "prevClose": 66.95,
+      "prevClose": 66.99,
       "dayChangePercent": 0,
-      "volume": 83,
-      "avgVolume3m": 450,
+      "volume": 4,
+      "avgVolume3m": 438,
       "fiftyTwoWeekHigh": 68,
       "fiftyTwoWeekLow": 64.1,
       "fiftyDayAverage": 66.4426,
-      "twoHundredDayAverage": 66.36421
+      "twoHundredDayAverage": 66.391464
     },
     "dividends": {
+      "increasingYears": 35,
       "rate": 2,
-      "yield": 0.0299,
+      "yield": 0.030299999,
       "payoutRatio": 0.38709998,
       "exDate": "2025-06-30T00:00:00.000Z",
-      "lastDividend": 0.5
+      "lastDividend": 0.5,
+      "dgr3": 12.181378776036711,
+      "dgr5": 10.225948408254371,
+      "dgr10": null
     }
   },
   "statistics": {
@@ -44,9 +48,9 @@
     "institutionalOwnership": null,
     "shortRatio": null,
     "shortPercentFloat": null,
-    "priceToBook": 1.7178118,
-    "enterpriseValue": 555183552,
-    "enterpriseToRevenue": 5.349,
+    "priceToBook": 1.7188382,
+    "enterpriseValue": 548515392,
+    "enterpriseToRevenue": 5.285,
     "enterpriseToEbitda": null,
     "trailingPE": null,
     "forwardPE": null,
@@ -72,16 +76,17 @@
     "operatingMargin": 0.35426998,
     "netMargin": 0.34132,
     "ebitdaMargin": 0,
-    "fcfMargin": 0.5949208551306878
+    "fcfMargin": 0.5949208551306878,
+    "earningsGrowth": 0.214
   },
   "snapshots": [
     {
-      "timestamp": "2025-09-01T20:39:46.629Z",
-      "price": 66.95,
-      "marketCap": 468190048,
+      "timestamp": "2025-09-06T01:42:16.033Z",
+      "price": 66.99,
+      "marketCap": 468469760,
       "pe": null,
       "eps": 4.96,
-      "dividendYield": 0.0299,
+      "dividendYield": 0.030299999,
       "debtEquity": null
     }
   ],
@@ -95,5 +100,5 @@
     "2024": 1.93,
     "2025": 0.99
   },
-  "updatedAt": "2025-09-01T20:39:46.848Z"
+  "updatedAt": "2025-09-06T01:42:16.232Z"
 }

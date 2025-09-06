@@ -3,7 +3,7 @@
   "meta": {
     "company": "Federal Realty Investment Trust",
     "shortName": "Federal Realty Investment Trust",
-    "longBusinessSummary": "Federal Realty is a recognized leader in the ownership, operation and redevelopment of high-quality retail-based properties located primarily in major coastal markets from Washington, D.C. to Boston as well as Northern and Southern California. Founded in 1962, Federal Realty's mission is to deliver long-term, sustainable growth through investing in communities where retail demand exceeds supply. Its expertise includes creating urban, mixed-use neighborhoods like Santana Row in San Jose, California, Pike & Rose in North Bethesda, Maryland and Assembly Row in Somerville, Massachusetts. These unique and vibrant environments that combine shopping, dining, living and working provide a destination experience valued by their respective communities. Federal Realty's 103 properties include approximately 3,500 tenants, in 27 million commercial square feet, and approximately 3,100 residential units.",
+    "longBusinessSummary": "Federal Realty is a recognized leader in the ownership, operation and redevelopment of high-quality retail-based properties located primarily in major coastal markets and select underserved regions with strong economic and demographic fundamentals. Founded in 1962, Federal Realty's mission is to deliver long-term, sustainable growth through investing in communities where retail demand exceeds supply. This includes a portfolio of open-air shopping centers and mixed-use destinationssuch as Santana Row, Pike & Rose and Assembly Rowwhich together reflect the company's ability to create distinctive, high-performing environments that serve as vibrant destinations for their communities. Federal Realty's 102 properties include approximately 3,500 tenants in 27 million commercial square feet, and approximately 3,000 residential units.",
     "sector": "Real Estate",
     "industry": "REIT - Retail",
     "country": "United States",
@@ -14,43 +14,47 @@
   },
   "summary": {
     "currency": "USD",
-    "marketCap": 8727267328,
-    "beta": 1.156,
+    "marketCap": 8911272960,
+    "beta": 1.177,
     "price": {
-      "current": 100.55,
-      "open": 99.84,
-      "high": 100.675,
-      "low": 99.52,
-      "prevClose": 99.82,
-      "dayChangePercent": 0.0073132003,
-      "volume": 902557,
-      "avgVolume3m": 758938,
+      "current": 102.67,
+      "open": 101.46,
+      "high": 102.94,
+      "low": 101.67,
+      "prevClose": 100.99,
+      "dayChangePercent": 0.0166353,
+      "volume": 617087,
+      "avgVolume3m": 769854,
       "fiftyTwoWeekHigh": 118.34,
       "fiftyTwoWeekLow": 80.65,
-      "fiftyDayAverage": 94.892,
-      "twoHundredDayAverage": 100.71945
+      "fiftyDayAverage": 95.1334,
+      "twoHundredDayAverage": 100.50755
     },
     "dividends": {
+      "increasingYears": 20,
       "rate": 4.52,
-      "yield": 0.045,
+      "yield": 0.0448,
       "payoutRatio": 1.1139,
       "exDate": "2025-10-01T00:00:00.000Z",
-      "lastDividend": 1.1
+      "lastDividend": 1.1,
+      "dgr3": 0.9324547276272188,
+      "dgr5": 1.2343556660257438,
+      "dgr10": null
     }
   },
   "statistics": {
     "sharesOutstanding": 86266096,
     "floatShares": 77955246,
     "insiderOwnership": 0.01044,
-    "institutionalOwnership": 0.97142,
+    "institutionalOwnership": 0.97297996,
     "shortRatio": 2.77,
     "shortPercentFloat": 0.0343,
-    "priceToBook": 2.807718,
-    "enterpriseValue": 13479579648,
-    "enterpriseToRevenue": 10.879,
-    "enterpriseToEbitda": 17.133,
+    "priceToBook": 2.866916,
+    "enterpriseValue": 13662464000,
+    "enterpriseToRevenue": 11.026,
+    "enterpriseToEbitda": 17.366,
     "trailingPE": null,
-    "forwardPE": 31.090376,
+    "forwardPE": 31.745886,
     "trailingEPS": 3.95,
     "forwardEPS": 3.07,
     "bookValue": 35.812,
@@ -73,16 +77,17 @@
     "operatingMargin": 0.40697,
     "netMargin": 0.27938,
     "ebitdaMargin": 0.63495,
-    "fcfMargin": 0.3148099853431993
+    "fcfMargin": 0.3148099853431993,
+    "earningsGrowth": 0.349
   },
   "snapshots": [
     {
-      "timestamp": "2025-09-01T20:39:48.730Z",
-      "price": 100.55,
-      "marketCap": 8727267328,
-      "pe": 31.090376,
+      "timestamp": "2025-09-06T01:42:24.221Z",
+      "price": 102.67,
+      "marketCap": 8911272960,
+      "pe": 31.745886,
       "eps": 3.95,
-      "dividendYield": 0.045,
+      "dividendYield": 0.0448,
       "debtEquity": 130.637
     }
   ],
@@ -127,5 +132,5 @@
     "2024": 3.2800000000000002,
     "2025": 3.3000000000000003
   },
-  "updatedAt": "2025-09-01T20:39:49.622Z"
+  "updatedAt": "2025-09-06T01:42:24.753Z"
 }

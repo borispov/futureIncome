@@ -2,10 +2,18 @@
 export interface Props {
   stocks: any[];
 }
-
 const { stocks } = Astro.props;
----
+console.log(stocks[9].financials)
 
+const formatter = new Intl.NumberFormat('en', { 
+  style: 'currency', 
+  currency: 'USD', 
+  notation: 'compact', 
+});
+function compactNumber(n) {
+  return formatter.format(n)
+}
+---
 <div class="overflow-x-auto border border-gray-200 rounded-lg shadow-sm bg-white">
   <table class="min-w-full text-xs">
     <thead class="bg-gray-100 border-b border-gray-200">
@@ -13,42 +21,39 @@ const { stocks } = Astro.props;
         <th class="px-2 py-2 font-semibold">Ticker</th>
         <th class="px-2 py-2 font-semibold text-right">Revenue</th>
         <th class="px-2 py-2 font-semibold text-right">Revenue Growth TTM</th>
+        <th class="px-2 py-2 font-semibold text-right">Earnings Growth</th>
         <th class="px-2 py-2 font-semibold text-right">Gross Profit</th>
-        <th class="px-2 py-2 font-semibold text-right">Operating Income</th>
         <th class="px-2 py-2 font-semibold text-right">Net Income</th>
+        <th class="px-2 py-2 font-semibold text-right">Operating Cash Flow</th>
         <th class="px-2 py-2 font-semibold text-right">Free Cash Flow</th>
+        <th class="px-2 py-2 font-semibold text-right">Return On Equity</th>
       </tr>
     </thead>
     <tbody>
       {stocks.map((s) => {
         const f = s.financials || {};
-
-        const revenue = f.revenue ? `$${(f.revenue / 1e9).toFixed(2)}B` : "N/A";
+        const revenue = f.revenue ? compactNumber(f.revenue) : "N/A";
         const revenueGrowth = f.revenueGrowth
           ? (f.revenueGrowth * 100).toFixed(1) + "%"
           : "N/A";
-        const grossProfit = f.grossProfit
-          ? `$${(f.grossProfit / 1e9).toFixed(2)}B`
-          : "N/A";
-        const operatingIncome = f.operatingIncome
-          ? `$${(f.operatingIncome / 1e9).toFixed(2)}B`
-          : "N/A";
-        const netIncome = f.netIncome
-          ? `$${(f.netIncome / 1e9).toFixed(2)}B`
-          : "N/A";
-        const fcf = f.freeCashFlow
-          ? `$${(f.freeCashFlow / 1e9).toFixed(2)}B`
-          : "N/A";
+        const grossProfit = compactNumber(f.grossProfit)
+        const netIncome = f.netIncome ? compactNumber(f.netIncome) : "N/A"
+        const ocf = f.operatingCashFlow ? compactNumber(f.operatingCashFlow) : "N/A";
+        const fcf = f.freeCashFlow ? compactNumber(f.freeCashFlow) : "N/A";
+        const roe = f.returnOnEquity ? `${(f.returnOnEquity * 100).toFixed(1)}%` : "N/A";
+        const earningsGrowth = f.earningsGrowth ? `${(f.earningsGrowth * 100).toFixed(1)}%` : "N/A";
 
         return (
           <tr class="border-b last:border-0 hover:bg-gray-50">
             <td class="px-2 py-1 font-bold">{s.ticker}</td>
             <td class="px-2 py-1 text-right">{revenue}</td>
             <td class="px-2 py-1 text-right">{revenueGrowth}</td>
+            <td class="px-2 py-1 text-right">{earningsGrowth}</td>
             <td class="px-2 py-1 text-right">{grossProfit}</td>
-            <td class="px-2 py-1 text-right">{operatingIncome}</td>
             <td class="px-2 py-1 text-right">{netIncome}</td>
+            <td class="px-2 py-1 text-right">{ocf}</td>
             <td class="px-2 py-1 text-right">{fcf}</td>
+            <td class="px-2 py-1 text-right">{roe}</td>
           </tr>
         );
       })}

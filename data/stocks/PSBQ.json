@@ -13,28 +13,32 @@
   },
   "summary": {
     "currency": "USD",
-    "marketCap": 100958416,
-    "beta": 0.398,
+    "marketCap": 103989592,
+    "beta": 0.404,
     "price": {
-      "current": 24.98,
+      "current": 25.73,
       "open": 25,
-      "high": 25,
+      "high": 25.73,
       "low": 25,
-      "prevClose": 24.98,
-      "dayChangePercent": 0,
-      "volume": 87,
-      "avgVolume3m": 2806,
+      "prevClose": 24.9,
+      "dayChangePercent": 0.03333333,
+      "volume": 1100,
+      "avgVolume3m": 2688,
       "fiftyTwoWeekHigh": 28,
       "fiftyTwoWeekLow": 23.05,
-      "fiftyDayAverage": 24.4002,
-      "twoHundredDayAverage": 25.3788
+      "fiftyDayAverage": 24.469,
+      "twoHundredDayAverage": 25.35145
     },
     "dividends": {
+      "increasingYears": 32,
       "rate": 0.68,
-      "yield": 0.0272,
+      "yield": 0.0271,
       "payoutRatio": 0.2831,
       "exDate": "2025-07-11T00:00:00.000Z",
-      "lastDividend": 0.34
+      "lastDividend": 0.34,
+      "dgr3": 12.110512440831279,
+      "dgr5": 10.286313147852999,
+      "dgr10": 8.940304613789163
     }
   },
   "statistics": {
@@ -44,9 +48,9 @@
     "institutionalOwnership": 0.14193,
     "shortRatio": null,
     "shortPercentFloat": null,
-    "priceToBook": 0.86974686,
-    "enterpriseValue": 240681488,
-    "enterpriseToRevenue": 4.956,
+    "priceToBook": 0.89586014,
+    "enterpriseValue": 243712672,
+    "enterpriseToRevenue": 5.018,
     "enterpriseToEbitda": null,
     "trailingPE": null,
     "forwardPE": null,
@@ -72,16 +76,17 @@
     "operatingMargin": 0.35269,
     "netMargin": 0.25621,
     "ebitdaMargin": 0,
-    "fcfMargin": null
+    "fcfMargin": null,
+    "earningsGrowth": 0.589
   },
   "snapshots": [
     {
-      "timestamp": "2025-09-01T20:40:23.972Z",
-      "price": 24.98,
-      "marketCap": 100958416,
+      "timestamp": "2025-09-06T01:45:32.276Z",
+      "price": 25.73,
+      "marketCap": 103989592,
       "pe": null,
       "eps": 2.19,
-      "dividendYield": 0.0272,
+      "dividendYield": 0.0271,
       "debtEquity": null
     }
   ],
@@ -109,5 +114,5 @@
     "2024": 0.62,
     "2025": 0.66
   },
-  "updatedAt": "2025-09-01T20:40:24.233Z"
+  "updatedAt": "2025-09-06T01:45:32.604Z"
 }

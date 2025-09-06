@@ -14,43 +14,47 @@
   },
   "summary": {
     "currency": "USD",
-    "marketCap": 1777411200,
-    "beta": 0.516,
+    "marketCap": 1780940032,
+    "beta": 0.532,
     "price": {
-      "current": 50.37,
-      "open": 49.91,
-      "high": 50.66,
-      "low": 49.91,
-      "prevClose": 49.91,
-      "dayChangePercent": 0.00921657,
-      "volume": 367006,
-      "avgVolume3m": 237098,
+      "current": 50.47,
+      "open": 49.87,
+      "high": 50.53,
+      "low": 49.77,
+      "prevClose": 49.94,
+      "dayChangePercent": 0.0106128,
+      "volume": 138326,
+      "avgVolume3m": 237520,
       "fiftyTwoWeekHigh": 61.97,
       "fiftyTwoWeekLow": 44.91,
-      "fiftyDayAverage": 50.6406,
-      "twoHundredDayAverage": 51.986
+      "fiftyDayAverage": 50.427,
+      "twoHundredDayAverage": 51.90195
     },
     "dividends": {
+      "increasingYears": 58,
       "rate": 1.68,
-      "yield": 0.0334,
+      "yield": 0.0336,
       "payoutRatio": 0.53419995,
       "exDate": "2025-08-11T00:00:00.000Z",
-      "lastDividend": 0.42
+      "lastDividend": 0.42,
+      "dgr3": 5.566719197800074,
+      "dgr5": 5.922384104881218,
+      "dgr10": null
     }
   },
   "statistics": {
     "sharesOutstanding": 35287100,
     "floatShares": 32557271,
     "insiderOwnership": 0.078439996,
-    "institutionalOwnership": 0.86112,
+    "institutionalOwnership": 0.86379,
     "shortRatio": 2.3,
     "shortPercentFloat": 0.020299999,
-    "priceToBook": 1.2124494,
-    "enterpriseValue": 3629536256,
-    "enterpriseToRevenue": 4.602,
-    "enterpriseToEbitda": 11.819,
+    "priceToBook": 1.2148566,
+    "enterpriseValue": 3633064960,
+    "enterpriseToRevenue": 4.606,
+    "enterpriseToEbitda": 11.831,
     "trailingPE": null,
-    "forwardPE": 16.389389,
+    "forwardPE": 16.421928,
     "trailingEPS": 3.07,
     "forwardEPS": null,
     "bookValue": 41.544,
@@ -73,16 +77,17 @@
     "operatingMargin": 0.22943,
     "netMargin": 0.13033,
     "ebitdaMargin": 0.38933998,
-    "fcfMargin": -0.2817112944351906
+    "fcfMargin": -0.2817112944351906,
+    "earningsGrowth": 0.111
   },
   "snapshots": [
     {
-      "timestamp": "2025-09-01T20:39:56.103Z",
-      "price": 50.37,
-      "marketCap": 1777411200,
-      "pe": 16.389389,
+      "timestamp": "2025-09-06T01:42:55.037Z",
+      "price": 50.47,
+      "marketCap": 1780940032,
+      "pe": 16.421928,
       "eps": 3.07,
-      "dividendYield": 0.0334,
+      "dividendYield": 0.0336,
       "debtEquity": 127.695
     }
   ],
@@ -134,5 +139,5 @@
     "2024": 1.6,
     "2025": 1.26
   },
-  "updatedAt": "2025-09-01T20:39:56.781Z"
+  "updatedAt": "2025-09-06T01:42:55.719Z"
 }

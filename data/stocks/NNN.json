@@ -3,7 +3,7 @@
   "meta": {
     "company": "NNN REIT, Inc.",
     "shortName": "NNN REIT, Inc.",
-    "longBusinessSummary": "NNN invests in high-quality properties subject generally to long-term, net leases with minimal ongoing capital expenditures. As of March 31, 2025, the Company owned 3,641 properties in 50 states with a gross leasable area of approximately 37,311,000 square feet and a weighted average remaining lease term of 10 years. NNN is one of only three publicly traded real estate investment trusts to have increased annual dividends for 35 or more consecutive years.",
+    "longBusinessSummary": "NNN invests in high-quality properties subject generally to long-term, net leases with minimal ongoing capital expenditures. As of June 30, 2025, the Company owned 3,663 properties in 50 states with a gross leasable area of approximately 38.3 million square feet and a weighted average remaining lease term of 10 years. NNN is one of only three publicly traded real estate investment trusts to have increased annual dividends for 36 or more consecutive years.",
     "sector": "Real Estate",
     "industry": "REIT - Retail",
     "country": "United States",
@@ -14,43 +14,47 @@
   },
   "summary": {
     "currency": "USD",
-    "marketCap": 8100635648,
-    "beta": 0.926,
+    "marketCap": 8183699456,
+    "beta": 0.955,
     "price": {
-      "current": 42.91,
-      "open": 42.3,
-      "high": 42.95,
-      "low": 42.19,
-      "prevClose": 42.18,
-      "dayChangePercent": 0.0173068,
-      "volume": 1306955,
-      "avgVolume3m": 1200625,
+      "current": 43.35,
+      "open": 42.56,
+      "high": 43.35,
+      "low": 42.56,
+      "prevClose": 42.38,
+      "dayChangePercent": 0.0228881,
+      "volume": 1714862,
+      "avgVolume3m": 1221603,
       "fiftyTwoWeekHigh": 49.57,
       "fiftyTwoWeekLow": 35.8,
-      "fiftyDayAverage": 42.5178,
-      "twoHundredDayAverage": 41.6531
+      "fiftyDayAverage": 42.4802,
+      "twoHundredDayAverage": 41.6489
     },
     "dividends": {
+      "increasingYears": 36,
       "rate": 2.4,
-      "yield": 0.0559,
+      "yield": 0.056599997,
       "payoutRatio": 1.1048,
       "exDate": "2025-07-31T00:00:00.000Z",
-      "lastDividend": 0.6
+      "lastDividend": 0.6,
+      "dgr3": 2.9292312593800496,
+      "dgr5": 2.439603512817623,
+      "dgr10": null
     }
   },
   "statistics": {
     "sharesOutstanding": 188782000,
     "floatShares": 186618450,
     "insiderOwnership": 0.0092400005,
-    "institutionalOwnership": 0.92030996,
+    "institutionalOwnership": 0.92053,
     "shortRatio": 2.78,
     "shortPercentFloat": 0.0277,
-    "priceToBook": 1.8512446,
-    "enterpriseValue": 12739251200,
-    "enterpriseToRevenue": 14.239,
-    "enterpriseToEbitda": 15.666,
+    "priceToBook": 1.8702272,
+    "enterpriseValue": 12822315008,
+    "enterpriseToRevenue": 14.331,
+    "enterpriseToEbitda": 15.768,
     "trailingPE": null,
-    "forwardPE": 20.80969,
+    "forwardPE": 21.023073,
     "trailingEPS": 2.1,
     "forwardEPS": 2.05,
     "bookValue": 23.179,
@@ -73,16 +77,17 @@
     "operatingMargin": 0.60989,
     "netMargin": 0.43901002,
     "ebitdaMargin": 0.90891,
-    "fcfMargin": 0.5852012476073375
+    "fcfMargin": 0.5852012476073375,
+    "earningsGrowth": -0.074
   },
   "snapshots": [
     {
-      "timestamp": "2025-09-01T20:40:14.736Z",
-      "price": 42.91,
-      "marketCap": 8100635648,
-      "pe": 20.80969,
+      "timestamp": "2025-09-06T01:44:36.253Z",
+      "price": 43.35,
+      "marketCap": 8183699456,
+      "pe": 21.023073,
       "eps": 2.1,
-      "dividendYield": 0.0559,
+      "dividendYield": 0.056599997,
       "debtEquity": 106.469
     }
   ],
@@ -124,5 +129,5 @@
     "2024": 2.29,
     "2025": 1.7599999999999998
   },
-  "updatedAt": "2025-09-01T20:40:15.125Z"
+  "updatedAt": "2025-09-06T01:44:36.795Z"
 }

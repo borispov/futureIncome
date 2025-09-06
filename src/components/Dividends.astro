@@ -14,57 +14,34 @@ const { stocks } = Astro.props;
         <th class="px-2 py-2 font-semibold text-right">Yield</th>
         <th class="px-2 py-2 font-semibold text-right">Dividend Amt</th>
         <th class="px-2 py-2 font-semibold text-right">Years Increasing</th>
-        <th class="px-2 py-2 font-semibold text-right">DGR 1Y</th>
+        <th class="px-2 py-2 font-semibold text-right">Payout Ratio</th>
         <th class="px-2 py-2 font-semibold text-right">DGR 3Y</th>
         <th class="px-2 py-2 font-semibold text-right">DGR 5Y</th>
-        <th class="px-2 py-2 font-semibold text-right">DGR 10Y</th>
-        <th class="px-2 py-2 font-semibold text-right">Most Recent Increase</th>
         <th class="px-2 py-2 font-semibold text-right">Ex-Dividend Date</th>
-        <th class="px-2 py-2 font-semibold text-right">Overall Score</th>
         <th class="px-2 py-2 font-semibold text-right">Recessions Survived</th>
       </tr>
     </thead>
     <tbody>
       {stocks.map((s) => {
         const divs = s.dividends || {};
-        const years = Object.keys(divs).sort();
-        let consecutive = 0;
-        if (years.length > 1) {
-          consecutive = 1;
-          for (let i = years.length - 1; i > 0; i--) {
-            const curr = divs[years[i]];
-            const prev = divs[years[i - 1]];
-            if (curr > prev) {
-              consecutive++;
-            } else {
-              break;
-            }
-          }
-        }
+        const summary = s.summary || {};
 
-        const lastDividend = s.summary?.dividends?.rate ?? null;
-        const dividendYield = s.summary?.dividends?.yield ?? null;
-        const exDate = s.summary?.dividends?.exDate
-          ? new Date(s.summary.dividends.exDate).toLocaleDateString()
+        const lastDividend = summary?.dividends?.rate ?? null;
+        const dividendYield = summary?.dividends?.yield ?? null;
+        const exDate = summary?.dividends?.exDate
+          ? new Date(summary.dividends.exDate).toLocaleDateString()
           : "N/A";
 
         return (
           <tr class="border-b last:border-0 hover:bg-gray-50">
             <td class="px-2 py-1 font-bold">{s.ticker}</td>
-            <td class="px-2 py-1 text-right">
-              {dividendYield ? (dividendYield * 100).toFixed(2) + "%" : "N/A"}
-            </td>
-            <td class="px-2 py-1 text-right">
-              {lastDividend ?? "N/A"}
-            </td>
-            <td class="px-2 py-1 text-right">{consecutive}</td>
-            <td class="px-2 py-1 text-right">Soon</td>
-            <td class="px-2 py-1 text-right">Soon</td>
-            <td class="px-2 py-1 text-right">Soon</td>
-            <td class="px-2 py-1 text-right">Soon</td>
-            <td class="px-2 py-1 text-right">Soon</td>
+            <td class="px-2 py-1 text-right">{dividendYield ? (dividendYield * 100).toFixed(2) + "%" : "N/A"}</td>
+            <td class="px-2 py-1 text-right">{lastDividend ?? "N/A"}</td>
+            <td class="px-2 py-1 text-right">{summary.dividends.increasingYears ?? 'N/A'}</td>
+            <td class="px-2 py-1 text-right">{summary.dividends.payoutRatio ? (summary.dividends.payoutRatio * 100).toFixed(0) + "%" : "N/A"}</td>
+            <td class="px-2 py-1 text-right">{summary.dividends.dgr3 != null ? summary.dividends.dgr3.toFixed(2) + '%' : 'N/A'}</td>
+            <td class="px-2 py-1 text-right">{summary.dividends.dgr5 != null ? summary.dividends.dgr5.toFixed(2) + '%' : 'N/A'}</td>
             <td class="px-2 py-1 text-right">{exDate}</td>
-            <td class="px-2 py-1 text-right">Soon</td>
             <td class="px-2 py-1 text-right">Soon</td>
           </tr>
         );
